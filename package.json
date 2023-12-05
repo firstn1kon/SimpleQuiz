@@ -1,8 +1,9 @@
 {
   "name": "quiz",
+  "homepage": "https://firstn1kon.github.io/SimpleQuiz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +23,7 @@
     "core-js": "^3.21.1",
     "gulp": "*",
     "gulp-clean-css": "^4.2.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "json-server": "^0.17.0",

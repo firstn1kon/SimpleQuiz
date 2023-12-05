@@ -6,6 +6,7 @@ const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
 const browsersync = require("browser-sync");
+const ghPages = require('gulp-gh-pages');
 
 const dist = "./dist";
 
@@ -128,5 +129,11 @@ gulp.task("prod", () => {
         .pipe(gulp.dest(dist + '/css'));
 });
 
+gulp.task('predeploy', function() {
+  return gulp.src('./dist/**/*')
+      .pipe(ghPages());
+});
+
 gulp.task("default", gulp.parallel("watch", "build"));
 gulp.task("build", gulp.parallel("prod"));
+gulp.task('deploy', gulp.parallel("prod", "predeploy"))
